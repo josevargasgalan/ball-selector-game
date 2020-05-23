@@ -1,20 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { BallSelectorComponent } from './components/ball-selector/ball-selector.component';
-import { BetSlipComponent } from './components/bet-slip/bet-slip.component';
+import { BallSelectorService } from './services';
+import { BallSelectorComponentModule } from './components/ball-selector/ball-selector.component.module';
+import { BetSlipComponentModule } from './components/bet-slip/bet-slip.component.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BallSelectorComponent,
-    BetSlipComponent
-  ],
+  declarations: [AppComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BallSelectorComponentModule,
+    BetSlipComponentModule
   ],
-  providers: [],
+  providers: [BallSelectorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

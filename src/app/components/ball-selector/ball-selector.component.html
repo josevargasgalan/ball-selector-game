@@ -1,3 +1,7 @@
-<p>
-  ball-selector works!
-</p>
+<div class="ball-selector-wrapper">
+  <h4>Numbers</h4>
+  <div class="balls-wrapper">
+    <app-ball *ngFor="let ball of balls" [numberOfBall]="ball" (click)="onSelectBall(ball)"></app-ball>
+  </div>
+  <button>Clear selection</button>
+</div>
