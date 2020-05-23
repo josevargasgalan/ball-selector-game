@@ -15,8 +15,23 @@ export class BetSlipComponent implements OnInit, OnDestroy {
   constructor(private ballSelectorService: BallSelectorService) { }
 
   ngOnInit() {
+    this.watchBallSelected();
+  }
+
+  watchBallSelected() {
     this.ballSelectorService.ballSelected$.pipe(takeUntil(this.destroy$))
-    .subscribe(ball => this.ballsSelected.push(ball));
+    .subscribe(ball => {
+      if (ball === -1) return this.clearSelection();
+      this.addBallSelected(ball);
+    });
+  }
+
+  addBallSelected(ball: number) {
+    this.ballsSelected.push(ball);
+  }
+
+  clearSelection() {
+    this.ballsSelected = [];
   }
 
 

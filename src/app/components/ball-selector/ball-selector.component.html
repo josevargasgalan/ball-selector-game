@@ -3,5 +3,5 @@
   <div class="balls-wrapper">
     <app-ball *ngFor="let ball of balls" [numberOfBall]="ball" (click)="onSelectBall(ball)"></app-ball>
   </div>
-  <button>Clear selection</button>
+  <button (click)="onClearSelection()">Clear selection</button>
 </div>

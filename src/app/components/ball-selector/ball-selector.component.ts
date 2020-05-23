@@ -29,4 +29,8 @@ export class BallSelectorComponent implements OnInit {
     this.ballSelectorService.addSelectedBall(ball);
   }
 
+  onClearSelection() {
+    this.ballSelectorService.clearSelection();
+  }
+
 }

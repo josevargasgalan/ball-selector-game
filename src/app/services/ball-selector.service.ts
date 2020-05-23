@@ -12,4 +12,9 @@ export class BallSelectorService {
         this.ballSelectedSubject.next(ball);
     }
   }
+
+  clearSelection() {
+    this.ballsSelected = [];
+    this.ballSelectedSubject.next(-1);
+  }
 }
