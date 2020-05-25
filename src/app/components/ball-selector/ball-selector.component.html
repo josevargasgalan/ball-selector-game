@@ -1,7 +1,20 @@
-<div class="ball-selector-wrapper">
-  <h4>Numbers</h4>
-  <div class="balls-wrapper">
-    <app-ball *ngFor="let ball of balls" [numberOfBall]="ball" (click)="onSelectBall(ball)"></app-ball>
+<div class="ball-selector-wrapper" >
+  <div *ngIf="!result">
+    <h4>Numbers</h4>
+    <div class="balls-wrapper">
+      <app-ball *ngFor="let ball of balls" [numberOfBall]="ball" (click)="onSelectBall(ball)"></app-ball>
+    </div>
+    <button (click)="onClearSelection()">Clear selection</button>
   </div>
-  <button (click)="onClearSelection()">Clear selection</button>
+  <div *ngIf="result">
+    <app-ball [numberOfBall]="result.ball"></app-ball>
+    <div *ngIf="result.result === 'winner'">
+      <span [ngStyle]="{color: 'green'}">{{'you won' | uppercase }}</span>
+      <span>Price : {{result.prize}}</span>
+    </div>
+    <div *ngIf="result.result === 'lose'">
+      <span [ngStyle]="{color: 'red'}">{{'you lose' | uppercase }}</span>
+    </div>
+    <div></div>
+  </div>
 </div>

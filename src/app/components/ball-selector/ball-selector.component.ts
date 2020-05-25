@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BallSelectorService } from 'src/app/services';
+import { BallSelectorService, ResultService } from 'src/app/services';
+import { Result } from 'src/app/services/models/result';
 
 @Component({
   selector: 'app-ball-selector',
@@ -9,11 +10,14 @@ import { BallSelectorService } from 'src/app/services';
 export class BallSelectorComponent implements OnInit {
   @Input() numberOfBalls: number;
   balls: number[] = [];
+  result: Result =  null;
 
-  constructor(private ballSelectorService: BallSelectorService) { }
+  constructor(private ballSelectorService: BallSelectorService, private resultService: ResultService) { }
 
   ngOnInit() {
     this.getBalls(this.numberOfBalls);
+    this.resultService.init(this.balls);
+    this.watchResult();
   }
 
   getBalls(numberOfBalls: number) {
@@ -23,6 +27,10 @@ export class BallSelectorComponent implements OnInit {
     }
 
     this.balls = balls;
+  }
+
+  private watchResult() {
+    this.resultService.result$.subscribe((result: Result) => this.result = result);
   }
 
   onSelectBall(ball: number) {

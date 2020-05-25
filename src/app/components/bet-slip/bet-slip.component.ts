@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { BallSelectorService } from 'src/app/services';
+import { BallSelectorService, ResultService } from 'src/app/services';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -14,7 +14,7 @@ export class BetSlipComponent implements OnInit, OnDestroy {
   bet = null;
   showError = false;
 
-  constructor(private ballSelectorService: BallSelectorService) { }
+  constructor(private ballSelectorService: BallSelectorService, private resultService: ResultService) { }
 
   ngOnInit() {
     this.watchBallSelected();
@@ -51,7 +51,7 @@ export class BetSlipComponent implements OnInit, OnDestroy {
   }
 
   UIonPlaceBet() {
-
+    this.resultService.calculateResult(this.total, this.ballsSelected);
   }
 
 
