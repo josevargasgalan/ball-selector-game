@@ -1,3 +1,14 @@
-<div class="balls-wrapper">
-  <app-ball *ngFor="let ball of ballsSelected" [numberOfBall]="ball"></app-ball>
+<div class="bet-slip-wrapper">
+  <div class="balls-wrapper">
+    <app-ball *ngFor="let ball of ballsSelected" [numberOfBall]="ball"></app-ball>
+  </div>
+  <div class="bet-wrapper">
+    <span class="bet-count">{{ballsSelected.length}}x</span>
+    <input type="text" class="bet-input" #betInput>
+    <button class="ok-button" [disabled]="!betInput.value || ballsSelected.length <= 0 " (click)="checkBet(betInput.value)">Ok</button>
+  <div [ngStyle]="{color: 'red'}" *ngIf="showError">Minimum bet is 5€</div>
+  </div>
 </div>
+
+<div class="total-amount">Total: {{total}}€</div>
+<button class="bet-button" [disabled]="ballsSelected.length <= 0 || !bet || bet < 5" (click)="UIonPlaceBet()">Place bet</button>

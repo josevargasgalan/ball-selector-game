@@ -3,3 +3,52 @@
   align-items: flex-start;
   flex-wrap: wrap;
 }
+
+.bet-slip-wrapper {
+  padding: 20px;
+  background-color: #ffffff;
+  margin: 10px;
+}
+
+.ok-button {
+  background-color: rgb(11, 74, 192);
+  border: inherit;
+  color: white;
+  padding: 7px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.bet-input {
+  padding: 5px 0
+}
+
+.bet-count {
+  background-color: #eeeeee;
+  padding: 6px;
+}
+
+.total-amount {
+  margin: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.bet-button {
+  background-color: rgb(11, 74, 192);
+  width: 100%;
+  border: inherit;
+  padding: 10px;
+  margin: 10px;
+  color: #ffffff;
+  cursor: pointer
+}
+
+button:disabled {
+  background-color: #eeeeee;
+  cursor: default
+}
+
+
+

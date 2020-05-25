@@ -11,11 +11,17 @@ import { takeUntil } from 'rxjs/operators';
 export class BetSlipComponent implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject<boolean>();
   ballsSelected: number[] = [];
+  bet = null;
+  showError = false;
 
   constructor(private ballSelectorService: BallSelectorService) { }
 
   ngOnInit() {
     this.watchBallSelected();
+  }
+
+  get total() {
+    return this.ballsSelected.length * this.bet;
   }
 
   watchBallSelected() {
@@ -26,12 +32,26 @@ export class BetSlipComponent implements OnInit, OnDestroy {
     });
   }
 
+
   addBallSelected(ball: number) {
     this.ballsSelected.push(ball);
   }
 
   clearSelection() {
     this.ballsSelected = [];
+  }
+
+  checkBet(bet: number) {
+    if (bet < 5) {
+      this.showError = true;
+    } else {
+      this.showError = false;
+      this.bet = bet;
+    }
+  }
+
+  UIonPlaceBet() {
+
   }
 
 
