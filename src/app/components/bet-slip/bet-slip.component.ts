@@ -45,7 +45,7 @@ export class BetSlipComponent implements OnInit, OnDestroy {
     return isNaN(bet);
   }
 
-  checkBet(bet: number) {
+  checkBet(bet: number | string) {
     if (bet < 5 || this.isNaN(bet)) {
       this.showError = true;
     } else {
