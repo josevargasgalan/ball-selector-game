@@ -51,7 +51,6 @@ export class BallSelectorComponent implements OnInit, OnDestroy {
 
   private getMaxBallsToSelect(numberOfBalls: number, percentage: number) {
     this.maxBallsToSelectAllowed = getMaxBallsSelected(numberOfBalls, percentage);
-    console.log(this.maxBallsToSelectAllowed)
   }
 
   onClearSelection() {

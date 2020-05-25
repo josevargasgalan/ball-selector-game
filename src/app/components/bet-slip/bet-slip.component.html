@@ -8,7 +8,9 @@
     <button class="ok-button" [disabled]="ballsSelected.length <= 0" (click)="checkBet(betInput.value)">Ok</button>
   <div [ngStyle]="{color: 'red'}" *ngIf="showError">Minimum bet is 5€</div>
   </div>
+  <div class="place-bet-wrapper">
+    <div class="total-amount">Total: {{total}}€</div>
+    <button class="bet-button" [disabled]="ballsSelected.length <= 0 || !bet || bet < 5" (click)="UIonPlaceBet()">Place bet</button>
+  </div>
 </div>
 
-<div class="total-amount">Total: {{total}}€</div>
-<button class="bet-button" [disabled]="ballsSelected.length <= 0 || !bet || bet < 5" (click)="UIonPlaceBet()">Place bet</button>
