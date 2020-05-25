@@ -12,3 +12,18 @@
   align-items: flex-start;
   flex-wrap: wrap;
 }
+
+.result-wrapper span {
+  width: 100%;
+  text-align: center;
+}
+
+.win {
+  color: rgb(8, 185, 8);
+  font-weight: bold;
+}
+
+.lose {
+  color: red;
+  font-weight: bold;
+}

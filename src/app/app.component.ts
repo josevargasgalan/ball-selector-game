@@ -6,8 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
-  showResult(bet: number) {
-    console.log(bet)
-  }
 }

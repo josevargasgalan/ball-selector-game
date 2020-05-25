@@ -5,7 +5,7 @@
   <div class="bet-wrapper">
     <span class="bet-count">{{ballsSelected.length}}x</span>
     <input type="text" class="bet-input" #betInput>
-    <button class="ok-button" [disabled]="!betInput.value || ballsSelected.length <= 0 " (click)="checkBet(betInput.value)">Ok</button>
+    <button class="ok-button" [disabled]="ballsSelected.length <= 0" (click)="checkBet(betInput.value)">Ok</button>
   <div [ngStyle]="{color: 'red'}" *ngIf="showError">Minimum bet is 5€</div>
   </div>
 </div>

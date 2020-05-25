@@ -41,8 +41,12 @@ export class BetSlipComponent implements OnInit, OnDestroy {
     this.ballsSelected = [];
   }
 
+  isNaN(bet: any) {
+    return isNaN(bet);
+  }
+
   checkBet(bet: number) {
-    if (bet < 5) {
+    if (bet < 5 || this.isNaN(bet)) {
       this.showError = true;
     } else {
       this.showError = false;

@@ -7,13 +7,14 @@
     <button (click)="onClearSelection()">Clear selection</button>
   </div>
   <div *ngIf="result">
+    <h3>Result</h3>
     <app-ball [numberOfBall]="result.ball"></app-ball>
     <div *ngIf="result.result === 'winner'">
-      <span [ngStyle]="{color: 'green'}">{{'you won' | uppercase }}</span>
-      <span>Price : {{result.prize}}</span>
+      <div class="win">{{'you won' | uppercase }}</div>
+      <div>Price : {{result.prize}}€</div>
     </div>
     <div *ngIf="result.result === 'lose'">
-      <span [ngStyle]="{color: 'red'}">{{'you lose' | uppercase }}</span>
+      <div class="lose">{{'you lose' | uppercase }}</div>
     </div>
     <div></div>
   </div>

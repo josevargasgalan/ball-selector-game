@@ -11,7 +11,7 @@
 }
 
 .ok-button {
-  background-color: rgb(11, 74, 192);
+  background-color: rgb(27, 138, 212);
   border: inherit;
   color: white;
   padding: 7px 20px;
@@ -20,12 +20,13 @@
 }
 
 .bet-input {
-  padding: 5px 0
+  padding: 5px 0;
+  border: 1px solid #000000;
 }
 
 .bet-count {
   background-color: #eeeeee;
-  padding: 6px;
+  padding: 5px;
 }
 
 .total-amount {
@@ -36,7 +37,7 @@
 }
 
 .bet-button {
-  background-color: rgb(11, 74, 192);
+  background-color: rgb(27, 138, 212);
   width: 100%;
   border: inherit;
   padding: 10px;

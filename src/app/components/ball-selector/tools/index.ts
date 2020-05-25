@@ -1,0 +1,1 @@
+export { getMaxBallsSelected } from './getMaxBallsSelected';
