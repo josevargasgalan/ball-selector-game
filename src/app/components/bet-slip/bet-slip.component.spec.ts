@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BetSlipComponent } from './bet-slip.component';
+import { BallComponentModule } from '../ball/ball.component.module';
+import { BallSelectorService, ResultService } from 'src/app/services';
 
 describe('BetSlipComponent', () => {
   let component: BetSlipComponent;
@@ -8,7 +9,9 @@ describe('BetSlipComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BetSlipComponent ]
+      declarations: [BetSlipComponent],
+      imports: [BallComponentModule],
+      providers: [BallSelectorService, ResultService]
     })
     .compileComponents();
   }));

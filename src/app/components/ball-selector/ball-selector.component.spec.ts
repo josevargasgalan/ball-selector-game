@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BallSelectorComponent } from './ball-selector.component';
+import { BallComponentModule } from '../ball/ball.component.module';
+import { BallSelectorService, ResultService } from 'src/app/services';
 
 describe('BallSelectorComponent', () => {
   let component: BallSelectorComponent;
@@ -8,7 +10,9 @@ describe('BallSelectorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BallSelectorComponent ]
+      declarations: [BallSelectorComponent],
+      providers: [BallSelectorService, ResultService],
+      imports: [BallComponentModule]
     })
     .compileComponents();
   }));
