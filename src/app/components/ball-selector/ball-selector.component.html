@@ -2,7 +2,7 @@
   <div *ngIf="!result">
     <h4>Numbers</h4>
     <div class="balls-wrapper">
-      <app-ball *ngFor="let ball of balls" [numberOfBall]="ball" (click)="onSelectBall(ball)"></app-ball>
+      <app-ball *ngFor="let ball of balls" [numberOfBall]="ball" (click)="onSelectBall(ball)" [cursor]=true></app-ball>
     </div>
     <button class="clear-selection-button" (click)="onClearSelection()">Clear selection</button>
   </div>
