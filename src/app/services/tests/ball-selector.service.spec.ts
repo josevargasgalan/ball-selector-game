@@ -24,5 +24,5 @@ describe('BallSelectorService', () => {
     service.ballsSelected = [1];
     service.addSelectedBall(1);
     expect(service.ballsSelected).toEqual([1]);
-  })
+  });
 });
